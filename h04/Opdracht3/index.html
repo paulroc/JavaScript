@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opdracht3</title>
+    <style>
+        #slideholder1{
+            height: 200px;
+            width: 600px;
+            border: 3px black solid;
+        }
+        #slideholder2{
+            height: 200px;
+            width: 600px;
+            border: 3px black solid;
+        }
+        #slideholder3{
+            height: 200px;
+            width: 600px;
+            border: 3px black solid;
+        }
+    </style>
+</head>
+<body>
+<div id="slideholder1"></div>
+<div id="slideholder2"></div>
+<div id="slideholder3"></div>
+<script>
+    var plaatjes1 = [1,2,3,4];
+    var teller1 = 0;
+    var slideholder1 = document.getElementById("slideholder1");
+    slideholder1.style.backgroundImage = "url('img_werk/hoofd4.jpg')";
+    slideholder1.style.backgroundSize = 'cover';
+
+    slideholder1.addEventListener("click",function (){
+        slideholder1.style.backgroundImage = "url('img_werk/hoofd" + getHoofd() +".jpg')";
+    });
+
+    function getHoofd() {
+        if (teller1>=plaatjes1.length){
+            teller1=1;
+        }else {
+            teller1++;
+        }
+        console.log(teller1);
+        return teller1;
+    }
+    var plaatjes2 = [1,2,3,4];
+    var teller2 = 0;
+    var slideholder2 = document.getElementById("slideholder2");
+    slideholder2.style.backgroundImage = "url('img_werk/neus4.jpg')";
+    slideholder2.style.backgroundSize = 'cover';
+
+
+    slideholder2.addEventListener("click",function (){
+        slideholder2.style.backgroundImage = "url('img_werk/neus" + getNeus() +".jpg')";
+    });
+
+    function getNeus() {
+        if (teller2>=plaatjes2.length){
+            teller2=1;
+        }else {
+            teller2++;
+        }
+        console.log(teller2);
+        return teller2;
+    }
+    var plaatjes3 = [1,2,3,4];
+    var teller3 = 0;
+    var slideholder3 = document.getElementById("slideholder3");
+    slideholder3.style.backgroundImage = "url('img_werk4/mond4.jpg')";
+    slideholder3.style.backgroundSize = 'cover';
+
+
+    slideholder3.addEventListener("click",function (){
+        slideholder3.style.backgroundImage = "url('img_werk/mond" + getMond() +".jpg')";
+    });
+
+    function getMond() {
+        if (teller3>=plaatjes3.length){
+            teller3=1;
+        }else {
+            teller3++;
+        }
+        console.log(teller3);
+        return teller3;
+    }
+</script>
+</body>
+</html>
