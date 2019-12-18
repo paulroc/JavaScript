@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hoofdstuk5</title>
+    <link href="https://fonts.goolgleapis.com/css?family=Copse" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Corpse', Serif;
+            text-align: center;
+        }
+
+        div.facepicture {
+            height: 450px;
+            width: 300px;
+            float: left;
+
+        }
+
+        div.favoriet {
+            width: 300px;
+            height: 150px;
+            background-image: none;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #pics {
+            width: 900px;
+            height: 1350px;
+            font-size: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Facechooser</h1>
+<h3>Choose yer favorite face!</h3>
+<div id="pics">
+    <script>
+        pics = document.getElementById("pics");
+        createPicsHolders();
+        createFaceImages();
+
+        function createPicsHolder() {
+            for (var i = 0; i < 9; i++) {
+                pictureholder = document.createElement("div");
+                pictureholder.className = "picture-holder";
+                pictureholder.id = "picture-holder-" + i;
+                pics.appendChild(pictureholder);
+            }
+        }
+
+        function createFaceImages() {
+            pictureholder = document.getElementsByClassName("pictureholder")
+            for (var i = 0; i < pictureholder.length; i++) {
+                favoriet = document.createElement("div");
+                favoriet.className = "favoriet";
+                favoriet.id = "favoriet_" + (i + 1) + "jpg";
+                facePlaatje = document.createElement("img");
+                facePlaatje.src = "url('img/face" + (i + 1) + "jpg')";
+                facePlaatje.id = (i + 1);
+                facePlaatje.addEventListener("click", function () {
+
+                });
+                pictureholder[i].appendChild(favoriet);
+                pictureholder[i].appendChild(facePlaatje);
+            }
+        }
+
+        function maakFavoriet(id) {
+            console.log("Maak mij Favoriet! het gaat om face..." + id);
+            notsofavoriet = document.getElementsByClassName("favoriet");
+
+            for (var i = 0; i < notsofavoriet.length; i++) {
+                notsofavoriet[i].style.backgroundImage = "none";
+            }
+            favoriet=document.getElementById("favoriet_"+id);
+            favoriet.style.backgroundImage="url('img/heart.jpg')";
+        }
+    </script>
+</div>
+</body>
+</html>
