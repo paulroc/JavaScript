@@ -10,7 +10,7 @@
             text-align: center;
         }
 
-        div.facepicture {
+        div.picture-holder {
             height: 450px;
             width: 300px;
             float: left;
@@ -37,48 +37,50 @@
 <h1>Facechooser</h1>
 <h3>Choose yer favorite face!</h3>
 <div id="pics">
-    <script>
-        pics = document.getElementById("pics");
-        createPicsHolders();
-        createFaceImages();
-
-        function createPicsHolder() {
-            for (var i = 0; i < 9; i++) {
-                pictureholder = document.createElement("div");
-                pictureholder.className = "picture-holder";
-                pictureholder.id = "picture-holder-" + i;
-                pics.appendChild(pictureholder);
-            }
-        }
-
-        function createFaceImages() {
-            pictureholder = document.getElementsByClassName("picture-holder")
-            for (var i = 0; i < pictureholder.length; i++) {
-                favoriet = document.createElement("div");
-                favoriet.className = "favoriet";
-                favoriet.id = "favoriet_" + (i + 1) + "jpg";
-                facePlaatje = document.createElement("img");
-                facePlaatje.src = "url('img/face" + (i + 1) + "jpg')";
-                facePlaatje.id = (i + 1);
-                facePlaatje.addEventListener("click", function () {
-
-                });
-                pictureholder[i].appendChild(favoriet);
-                pictureholder[i].appendChild(facePlaatje);
-            }
-        }
-
-        function maakFavoriet(id) {
-            console.log("Maak mij Favoriet! het gaat om face..." + id);
-            notsofavoriet = document.getElementsByClassName("favoriet");
-
-            for (var i = 0; i < notsofavoriet.length; i++) {
-                notsofavoriet[i].style.backgroundImage = "none";
-            }
-            favoriet = document.getElementById("favoriet_" + id);
-            favoriet.style.backgroundImage = "url('img/heart.jpg')";
-        }
-    </script>
 </div>
+<script>
+    pics = document.getElementById("pics");
+    createPicsHolders();
+    createFaceImages();
+
+    function createPicsHolder() {
+        for (var i = 0; i < 9; i++) {
+            pictureholders = document.createElement("div");
+            pictureholders.className = "picture-holder";
+            pictureholders.id = "picture-holder-" + i;
+            pics.appendChild(pictureholders);
+        }
+    }
+
+    function createFaceImages() {
+        pictureholders = document.getElementsByClassName("picture-holder");
+        console.log(pictureholders);
+        for (var i = 0; i < pictureholders.length; i++) {
+            favoriet = document.createElement("div");
+            favoriet.className = "favoriet";
+            favoriet.id = "favoriet_" + (i + 1) + "jpg";
+            facePlaatje = document.createElement("img");
+            facePlaatje.src = "url('img/face" + (i + 1) + "jpg')";
+            facePlaatje.id = (i + 1);
+            facePlaatje.addEventListener("click", function () {
+
+            });
+            pictureholders[i].appendChild(favoriet);
+            pictureholders[i].appendChild(facePlaatje);
+        }
+    }
+
+    function maakFavoriet(id) {
+        console.log("Maak mij Favoriet! het gaat om face..." + id);
+        notsofavoriet = document.getElementsByClassName("favoriet");
+
+        for (var i = 0; i < notsofavoriet.length; i++) {
+            notsofavoriet[i].style.backgroundImage = "none";
+        }
+        favoriet = document.getElementById("favoriet_" + id);
+        favoriet.style.backgroundImage = "url('img/heart.jpg')";
+    }
+</script>
+
 </body>
 </html>
