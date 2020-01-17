@@ -11,10 +11,14 @@
         }
 
         div.picture-holder {
-            height: 450px;
+            height: 400px;
             width: 300px;
             float: left;
 
+        }
+
+        div.picture-holder img {
+            width: 100%;
         }
 
         div.favoriet {
@@ -23,6 +27,7 @@
             background-image: none;
             background-repeat: no-repeat;
             background-position: center;
+            background-color: blue;
         }
 
         #pics {
@@ -40,7 +45,7 @@
 </div>
 <script>
     pics = document.getElementById("pics");
-    createPicsHolders();
+    createPicsHolder();
     createFaceImages();
 
     function createPicsHolder() {
@@ -60,11 +65,9 @@
             favoriet.className = "favoriet";
             favoriet.id = "favoriet_" + (i + 1) + "jpg";
             facePlaatje = document.createElement("img");
-            facePlaatje.src = "url('img/face" + (i + 1) + "jpg')";
+            facePlaatje.src = "img/face" + (i + 1) + ".jpg";
             facePlaatje.id = (i + 1);
-            facePlaatje.addEventListener("click", function () {
-
-            });
+            facePlaatje.addEventListener("click", maakFavoriet);
             pictureholders[i].appendChild(favoriet);
             pictureholders[i].appendChild(facePlaatje);
         }
@@ -78,7 +81,7 @@
             notsofavoriet[i].style.backgroundImage = "none";
         }
         favoriet = document.getElementById("favoriet_" + id);
-        favoriet.style.backgroundImage = "url('img/heart.jpg')";
+        favoriet.style.backgroundImage = "url('img/heart.png')";
     }
 </script>
 
