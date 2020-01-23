@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>hoofdstuk5</title>
-    <link href="https://fonts.goolgleapis.com/css?family=Copse" rel="stylesheet">
+
     <style>
         body {
-            font-family: 'Corpse', Serif;
+            font-family: Serif;
             text-align: center;
         }
 
@@ -63,7 +63,7 @@
         for (var i = 0; i < pictureholders.length; i++) {
             favoriet = document.createElement("div");
             favoriet.className = "favoriet";
-            favoriet.id = "favoriet_" + (i + 1) + "jpg";
+            favoriet.id = "favoriet_" + (i + 1);
             facePlaatje = document.createElement("img");
             facePlaatje.src = "img/face" + (i + 1) + ".jpg";
             facePlaatje.id = (i + 1);
@@ -73,7 +73,8 @@
         }
     }
 
-    function maakFavoriet(id) {
+    function maakFavoriet() {
+        var id = event.srcElement.id;
         console.log("Maak mij Favoriet! het gaat om face..." + id);
         notsofavoriet = document.getElementsByClassName("favoriet");
 
