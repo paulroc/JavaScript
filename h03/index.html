@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Hoofdstuk3</title>
-    <link href="https://fonts.googleapis.com/css?family=Corpse" rel="stylesheet">
     <style>
         html{
             margin: 0 0 0 0;
@@ -43,9 +42,10 @@
 <script>
     var plaatjes = document.getElementsByTagName("img")
     var random = 0;
-
+    var math;
     var randomNumbers = [];
     while (randomNumbers.length<9){
+
         random = math.floor(math.random()*9)+1;
         if (randomNumbers.lastIndexOf(random) == -1){
             randomNumbers.push(random);
@@ -54,7 +54,7 @@
 
     random=0;
     for (var plaatje in plaatjes){
-        plaatjes[plaatje].src="../img/aap"+ randomNumbers[random]+"jpg";
+        plaatjes[plaatje].src="img/aap"+ randomNumbers[random]+"jpg";
         random++;
     }
 </script>
